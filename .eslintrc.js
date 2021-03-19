@@ -1,7 +1,9 @@
 module.exports = {
+  root: true,
   extends: [
     'eslint:recommended',
-    'plugin:node/recommended'
+    'airbnb-base',
+    'plugin:prettier/recommended'
   ], //使用推荐的React代码检测规范
   env: {
     es6: true,
@@ -26,6 +28,11 @@ module.exports = {
     "no-restricted-globals": "warn",
     "yoda": "off",
     "prefer-destructuring": "warn",
-    "class-methods-use-this": "warn"
+    "class-methods-use-this": "warn",
+    "import/no-extraneous-dependencies": ["error", {
+      devDependencies: true,
+      peerDependencies: true,
+    }],
+    "import/newline-after-import": ["warn", { "count": 2 }]
   }
 };

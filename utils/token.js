@@ -32,14 +32,14 @@ const parseToken = (token) => {
  * 判断token是否更新有效期
  */
 const getTokenRenewStatus = (token) => {
-  //检测当前token是否到达续期时间段
+  // 检测当前token是否到达续期时间段
   const obj = parseToken(token);
   const nowTime = new Date().getTime() / 1000;
   const range = 10 * 60;
   if(!obj.uid || !obj.username){
     return false;
   }
-  //更新时间段在过期前10分钟
+  // 更新时间段在过期前10分钟
   if(obj.exp - nowTime < range){
     console.log(range, '过期时间')
     return false;
